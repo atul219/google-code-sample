@@ -99,21 +99,21 @@ def test_show_all_playlists(capfd):
     assert "my_cool_playLIST" in lines[4]
 
 
-# def test_show_playlist(capfd):
-#     player = VideoPlayer()
-#     player.create_playlist("my_cool_playlist")
-#     player.show_playlist("my_cool_playlist")
-#     player.add_to_playlist("my_cool_playlist", "amazing_cats_video_id")
-#     player.show_playlist("my_COOL_playlist")
-#     out, err = capfd.readouterr()
-#     lines = out.splitlines()
-#     assert len(lines) == 6
-#     assert "Successfully created new playlist: my_cool_playlist" in lines[0]
-#     assert "Showing playlist: my_cool_playlist" in lines[1]
-#     assert "No videos here yet" in lines[2]
-#     assert "Added video to my_cool_playlist: Amazing Cats" in lines[3]
-#     assert "Showing playlist: my_COOL_playlist" in lines[4]
-#     assert "Amazing Cats (amazing_cats_video_id) [#cat #animal]" in lines[5]
+def test_show_playlist(capfd):
+    player = VideoPlayer()
+    player.create_playlist("my_cool_playlist")
+    player.show_playlist("my_cool_playlist")
+    player.add_to_playlist("my_cool_playlist", "amazing_cats_video_id")
+    player.show_playlist("my_COOL_playlist")
+    out, err = capfd.readouterr()
+    lines = out.splitlines()
+    assert len(lines) == 6
+    assert "Successfully created new playlist: my_cool_playlist" in lines[0]
+    assert "Showing playlist: my_cool_playlist" in lines[1]
+    assert "No videos here yet" in lines[2]
+    assert "Added video to my_cool_playlist: Amazing Cats" in lines[3]
+    assert "Showing playlist: my_COOL_playlist" in lines[4]
+    assert "Amazing Cats (amazing_cats_video_id) [#cat #animal]" in lines[5]
 
 
 # def test_remove_from_playlist_then_re_add(capfd):

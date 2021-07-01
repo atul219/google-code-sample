@@ -232,9 +232,13 @@ class VideoPlayer:
         """Display all playlists."""
         if self.playlist_dict:
             print(f"Showing all playlists:")
+            name = []
             for key in self.playlist_dict.keys():
                 # print(self.playlist_dict[key]._videos)
-                print(self.playlist_dict[key].)
+                name.append(self.playlist_dict[key]._name)
+
+            for x in name[::-1]:
+                print(x)
             
         else:
             print("No playlists exist yet")
@@ -245,7 +249,7 @@ class VideoPlayer:
         Args:
             playlist_name: The playlist name.
         """
-        print("show_playlist needs implementation")
+       
 
     def remove_from_playlist(self, playlist_name, video_id):
         """Removes a video to a playlist with a given name.
